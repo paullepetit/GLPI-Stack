@@ -37,8 +37,7 @@ RUN /usr/sbin/a2enmod ssl
 RUN wget https://github.com/glpi-project/glpi/releases/download/9.1/glpi-9.1.tar.gz 
 
 RUN tar -xvzf glpi-9.1.tar.gz -C /var/www/
-
-RUN chown -R www-data /var/www/glpi 
+RUN chown -R www-data /var/www/glpi
 
 # Configure les variable d'environement
 ENV APACHE_RUN_USER     www-data
