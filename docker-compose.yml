@@ -16,5 +16,7 @@ services :
       MYSQL_USER : glpiuser
       MYSQL_PASSWORD : glpimdp
       MYSQL_DATABASE : glpidb
+    volumes :
+      - ./sql/:/docker-entrypoint-initdb.d/
     ports :
       - 3306:3306
