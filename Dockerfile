@@ -51,6 +51,9 @@ ENV APACHE_LOG_DIR      /var/log/apache2
 ADD glpi.conf /etc/apache2/sites-available/
 
 RUN ln -s /etc/apache2/sites-available/glpi.conf /etc/apache2/sites-enabled/glpi.conf
+RUN wget https://github.com/pluginsGLPI/ocsinventoryng/releases/download/1.3.1/glpi-ocsinventoryng-1.3.1.tar.gz
+RUN tar -xvzf glpi-ocsinventoryng-1.3.1.tar.gz
+RUN mv ocsinventoryng /var/www/glpi/plugins/
 
 # Exposition des ports
 EXPOSE 80
